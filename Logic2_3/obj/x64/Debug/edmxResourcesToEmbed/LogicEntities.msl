@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LogicModelStoreContainer" CdmEntityContainer="LogicEntities">
+    <EntitySetMapping Name="JC_HC_AGENCY">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_AGENCY">
+        <MappingFragment StoreEntitySet="JC_HC_AGENCY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+          <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_CURENT">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_CURENT">
+        <MappingFragment StoreEntitySet="JC_HC_CURENT">
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+          <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+          <ScalarProperty Name="UDTS" ColumnName="UDTS" />
+          <ScalarProperty Name="XDTS" ColumnName="XDTS" />
+          <ScalarProperty Name="ESTNUM" ColumnName="ESTNUM" />
+          <ScalarProperty Name="EDIRPRE" ColumnName="EDIRPRE" />
+          <ScalarProperty Name="EFEANME" ColumnName="EFEANME" />
+          <ScalarProperty Name="EFEATYP" ColumnName="EFEATYP" />
+          <ScalarProperty Name="UNIT_COUNT" ColumnName="UNIT_COUNT" />
+          <ScalarProperty Name="LOI_SENT" ColumnName="LOI_SENT" />
+          <ScalarProperty Name="HC_SENT" ColumnName="HC_SENT" />
+          <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+          <ScalarProperty Name="LOI_EVAL" ColumnName="LOI_EVAL" />
+          <ScalarProperty Name="UNIT_EVAL" ColumnName="UNIT_EVAL" />
+          <ScalarProperty Name="TYPE_EVAL" ColumnName="TYPE_EVAL" />
+          <ScalarProperty Name="NUM_1" ColumnName="NUM_1" />
+          <ScalarProperty Name="XSTREET1" ColumnName="XSTREET1" />
+          <ScalarProperty Name="XSTREET2" ColumnName="XSTREET2" />
+          <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="AD_TS" ColumnName="AD_TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_LOI">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_LOI">
+        <MappingFragment StoreEntitySet="JC_HC_LOI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HNDR_BLCK" ColumnName="HNDR_BLCK" />
+          <ScalarProperty Name="LOI_GRP_ID" ColumnName="LOI_GRP_ID" />
+          <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="EFEANME" ColumnName="EFEANME" />
+          <ScalarProperty Name="ESTNUM" ColumnName="ESTNUM" />
+          <ScalarProperty Name="EDIRPRE" ColumnName="EDIRPRE" />
+          <ScalarProperty Name="EFEATYP" ColumnName="EFEATYP" />
+          <ScalarProperty Name="COMMON_NAME" ColumnName="COMMON_NAME" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_SENT">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_SENT">
+        <MappingFragment StoreEntitySet="JC_HC_SENT">
+          <ScalarProperty Name="EID" ColumnName="EID" />
+          <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+          <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+          <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+          <ScalarProperty Name="SENT_DT" ColumnName="SENT_DT" />
+          <ScalarProperty Name="EMAIL_SENT" ColumnName="EMAIL_SENT" />
+          <ScalarProperty Name="NUM_1" ColumnName="NUM_1" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_TYPES">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_TYPES">
+        <MappingFragment StoreEntitySet="JC_HC_TYPES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+          <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+          <ScalarProperty Name="AGENCY" ColumnName="AGENCY" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="UN_CNT" ColumnName="UN_CNT" />
+          <ScalarProperty Name="ALWYS_SND" ColumnName="ALWYS_SND" />
+          <ScalarProperty Name="NEVR_SND" ColumnName="NEVR_SND" />
+          <ScalarProperty Name="NOT4PUB" ColumnName="NOT4PUB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_USERS">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_USERS">
+        <MappingFragment StoreEntitySet="JC_HC_USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="OOF" ColumnName="OOF" />
+          <ScalarProperty Name="LOI_GRPS" ColumnName="LOI_GRPS" />
+          <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="LEO" ColumnName="LEO" />
+          <ScalarProperty Name="ZIP2" ColumnName="ZIP2" />
+          <ScalarProperty Name="ZIP3" ColumnName="ZIP3" />
+          <ScalarProperty Name="RECD1" ColumnName="RECD1" />
+          <ScalarProperty Name="RECD2" ColumnName="RECD2" />
+          <ScalarProperty Name="RECD3" ColumnName="RECD3" />
+          <ScalarProperty Name="RECD4" ColumnName="RECD4" />
+          <ScalarProperty Name="RECD5" ColumnName="RECD5" />
+          <ScalarProperty Name="RECD6" ColumnName="RECD6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JC_HC_USR_SND">
+      <EntityTypeMapping TypeName="LogicModel.JC_HC_USR_SND">
+        <MappingFragment StoreEntitySet="JC_HC_USR_SND">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+          <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+          <ScalarProperty Name="AGY_ID" ColumnName="AGY_ID" />
+          <ScalarProperty Name="GRP_ID" ColumnName="GRP_ID" />
+          <ScalarProperty Name="LOI_ID" ColumnName="LOI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

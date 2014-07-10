@@ -1,0 +1,12 @@
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\Logic2_3.exe.config
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\Logic2_3.exe
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\Logic2_3.pdb
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\EntityFramework.dll
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\Oracle.DataAccess.dll
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\x64\Debug\EntityFramework.xml
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\obj\x64\Debug\Logic2_3.csprojResolveAssemblyReference.cache
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\obj\x64\Debug\Logic2_3.exe
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\obj\x64\Debug\Logic2_3.pdb
+U:\GitHub\Logic2_3\Logic2_3\bin\x64\Debug\Logic2_3.exe.config
+U:\GitHub\Logic2_3\Logic2_3\obj\x64\Debug\Logic2_3.exe
+U:\GitHub\Logic2_3\Logic2_3\obj\x64\Debug\Logic2_3.pdb

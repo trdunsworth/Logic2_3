@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LogicModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="JC_HC_AGENCY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="AG_ID" Type="varchar2" MaxLength="6" Nullable="false" />
+          <Property Name="UNITS" Type="number" Precision="2" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_CURENT">
+          <Key>
+            <PropertyRef Name="EID" />
+            <PropertyRef Name="NUM_1" />
+            <PropertyRef Name="AD_TS" />
+          </Key>
+          <Property Name="EID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TYCOD" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="SUB_TYCOD" Type="varchar2" MaxLength="16" />
+          <Property Name="UDTS" Type="varchar2" MaxLength="16" />
+          <Property Name="XDTS" Type="varchar2" MaxLength="16" />
+          <Property Name="ESTNUM" Type="varchar2" MaxLength="11" />
+          <Property Name="EDIRPRE" Type="varchar2" MaxLength="2" />
+          <Property Name="EFEANME" Type="varchar2" MaxLength="30" />
+          <Property Name="EFEATYP" Type="varchar2" MaxLength="4" />
+          <Property Name="UNIT_COUNT" Type="number" Precision="5" Scale="0" />
+          <Property Name="LOI_SENT" Type="varchar2" MaxLength="1" />
+          <Property Name="HC_SENT" Type="varchar2" MaxLength="1" />
+          <Property Name="AG_ID" Type="varchar2" MaxLength="6" />
+          <Property Name="LOI_EVAL" Type="varchar2" MaxLength="1" />
+          <Property Name="UNIT_EVAL" Type="varchar2" MaxLength="1" />
+          <Property Name="TYPE_EVAL" Type="varchar2" MaxLength="1" />
+          <Property Name="NUM_1" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="XSTREET1" Type="varchar2" MaxLength="34" />
+          <Property Name="XSTREET2" Type="varchar2" MaxLength="34" />
+          <Property Name="ESZ" Type="number" Precision="10" Scale="0" />
+          <Property Name="COMMENTS" Type="varchar2" MaxLength="4000" />
+          <Property Name="AD_TS" Type="varchar2" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_LOI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="HNDR_BLCK" Type="varchar2" MaxLength="8" />
+          <Property Name="LOI_GRP_ID" Type="varchar2" MaxLength="10" />
+          <Property Name="ESZ" Type="number" Precision="22" Scale="0" />
+          <Property Name="ZIP" Type="varchar2" MaxLength="15" />
+          <Property Name="EFEANME" Type="varchar2" MaxLength="30" />
+          <Property Name="ESTNUM" Type="varchar2" MaxLength="11" />
+          <Property Name="EDIRPRE" Type="varchar2" MaxLength="2" />
+          <Property Name="EFEATYP" Type="varchar2" MaxLength="4" />
+          <Property Name="COMMON_NAME" Type="varchar2" MaxLength="300" />
+          <Property Name="CITY" Type="varchar2" MaxLength="50" />
+          <Property Name="ACTIVE" Type="varchar2" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_SENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="AG_ID" Type="varchar2" MaxLength="6" />
+          <Property Name="TYCOD" Type="varchar2" MaxLength="16" />
+          <Property Name="SUB_TYCOD" Type="varchar2" MaxLength="16" />
+          <Property Name="SENT_DT" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="EMAIL_SENT" Type="varchar2" MaxLength="4000" />
+          <Property Name="NUM_1" Type="varchar2" MaxLength="20" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="TYCOD" Type="varchar2" MaxLength="16" Nullable="false" />
+          <Property Name="SUB_TYCOD" Type="varchar2" MaxLength="16" />
+          <Property Name="AGENCY" Type="varchar2" MaxLength="9" Nullable="false" />
+          <Property Name="PRIORITY" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="UN_CNT" Type="number" Precision="2" Scale="0" />
+          <Property Name="ALWYS_SND" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="NEVR_SND" Type="varchar2" MaxLength="1" />
+          <Property Name="NOT4PUB" Type="varchar2" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="JC_HC_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="LNAME" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="FNAME" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="AG_ID" Type="varchar2" MaxLength="6" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="75" Nullable="false" />
+          <Property Name="OOF" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="LOI_GRPS" Type="varchar2" MaxLength="50" />
+          <Property Name="ESZ" Type="number" Precision="22" Scale="0" />
+          <Property Name="ZIP" Type="varchar2" MaxLength="15" />
+          <Property Name="LEO" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="ZIP2" Type="varchar2" MaxLength="15" />
+          <Property Name="ZIP3" Type="varchar2" MaxLength="15" />
+          <Property Name="RECD1" Type="varchar2" MaxLength="6" />
+          <Property Name="RECD2" Type="varchar2" MaxLength="6" />
+          <Property Name="RECD3" Type="varchar2" MaxLength="6" />
+          <Property Name="RECD4" Type="varchar2" MaxLength="6" />
+          <Property Name="RECD5" Type="varchar2" MaxLength="6" />
+          <Property Name="RECD6" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="JC_HC_USR_SND">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="USR_ID" Type="number" Precision="10" Scale="0" />
+          <Property Name="ESZ" Type="number" Precision="10" Scale="0" />
+          <Property Name="AGY_ID" Type="number" Precision="2" Scale="0" />
+          <Property Name="GRP_ID" Type="varchar2" MaxLength="10" />
+          <Property Name="LOI_ID" Type="number" Precision="10" Scale="0" />
+        </EntityType>
+        <Association Name="SND_AGY_ID_FK">
+          <End Role="JC_HC_AGENCY" Type="Self.JC_HC_AGENCY" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_AGENCY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="AGY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SND_LOI_ID_FK">
+          <End Role="JC_HC_LOI" Type="Self.JC_HC_LOI" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_LOI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="LOI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SND_USR_ID_FK">
+          <End Role="JC_HC_USERS" Type="Self.JC_HC_USERS" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="USR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LogicModelStoreContainer">
+          <EntitySet Name="JC_HC_AGENCY" EntityType="Self.JC_HC_AGENCY" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_CURENT" EntityType="Self.JC_HC_CURENT" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_LOI" EntityType="Self.JC_HC_LOI" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_SENT" EntityType="Self.JC_HC_SENT" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_TYPES" EntityType="Self.JC_HC_TYPES" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_USERS" EntityType="Self.JC_HC_USERS" Schema="CAD911" store:Type="Tables" />
+          <EntitySet Name="JC_HC_USR_SND" EntityType="Self.JC_HC_USR_SND" Schema="CAD911" store:Type="Tables" />
+          <AssociationSet Name="SND_AGY_ID_FK" Association="Self.SND_AGY_ID_FK">
+            <End Role="JC_HC_AGENCY" EntitySet="JC_HC_AGENCY" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+          <AssociationSet Name="SND_LOI_ID_FK" Association="Self.SND_LOI_ID_FK">
+            <End Role="JC_HC_LOI" EntitySet="JC_HC_LOI" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+          <AssociationSet Name="SND_USR_ID_FK" Association="Self.SND_USR_ID_FK">
+            <End Role="JC_HC_USERS" EntitySet="JC_HC_USERS" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LogicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="JC_HC_AGENCY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" />
+          <Property Name="AG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UNITS" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="JC_HC_USR_SND" Relationship="Self.SND_AGY_ID_FK" FromRole="JC_HC_AGENCY" ToRole="JC_HC_USR_SND" />
+        </EntityType>
+        <EntityType Name="JC_HC_CURENT">
+          <Key>
+            <PropertyRef Name="EID" />
+            <PropertyRef Name="NUM_1" />
+            <PropertyRef Name="AD_TS" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" />
+          <Property Name="TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUB_TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="UDTS" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="XDTS" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ESTNUM" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="EDIRPRE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EFEANME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EFEATYP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="UNIT_COUNT" Type="Int16" />
+          <Property Name="LOI_SENT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="HC_SENT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="LOI_EVAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="UNIT_EVAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE_EVAL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="XSTREET1" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+          <Property Name="XSTREET2" Type="String" MaxLength="34" FixedLength="false" Unicode="false" />
+          <Property Name="ESZ" Type="Int32" />
+          <Property Name="COMMENTS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="AD_TS" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_LOI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="HNDR_BLCK" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="LOI_GRP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ESZ" Type="Decimal" Precision="22" Scale="0" />
+          <Property Name="ZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EFEANME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ESTNUM" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="EDIRPRE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EFEATYP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="COMMON_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="JC_HC_USR_SND" Relationship="Self.SND_LOI_ID_FK" FromRole="JC_HC_LOI" ToRole="JC_HC_USR_SND" />
+        </EntityType>
+        <EntityType Name="JC_HC_SENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" />
+          <Property Name="AG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="SENT_DT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL_SENT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUB_TYCOD" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="AGENCY" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRIORITY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UN_CNT" Type="Int16" />
+          <Property Name="ALWYS_SND" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NEVR_SND" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NOT4PUB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="JC_HC_USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="LNAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OOF" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOI_GRPS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESZ" Type="Decimal" Precision="22" Scale="0" />
+          <Property Name="ZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LEO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ZIP2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="RECD1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RECD2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RECD3" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RECD4" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RECD5" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RECD6" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="JC_HC_USR_SND" Relationship="Self.SND_USR_ID_FK" FromRole="JC_HC_USERS" ToRole="JC_HC_USR_SND" />
+        </EntityType>
+        <EntityType Name="JC_HC_USR_SND">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="USR_ID" Type="Int32" />
+          <Property Name="ESZ" Type="Int32" />
+          <Property Name="AGY_ID" Type="Int16" />
+          <Property Name="GRP_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LOI_ID" Type="Int32" />
+          <NavigationProperty Name="JC_HC_AGENCY" Relationship="Self.SND_AGY_ID_FK" FromRole="JC_HC_USR_SND" ToRole="JC_HC_AGENCY" />
+          <NavigationProperty Name="JC_HC_LOI" Relationship="Self.SND_LOI_ID_FK" FromRole="JC_HC_USR_SND" ToRole="JC_HC_LOI" />
+          <NavigationProperty Name="JC_HC_USERS" Relationship="Self.SND_USR_ID_FK" FromRole="JC_HC_USR_SND" ToRole="JC_HC_USERS" />
+        </EntityType>
+        <Association Name="SND_AGY_ID_FK">
+          <End Role="JC_HC_AGENCY" Type="Self.JC_HC_AGENCY" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_AGENCY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="AGY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SND_LOI_ID_FK">
+          <End Role="JC_HC_LOI" Type="Self.JC_HC_LOI" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_LOI">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="LOI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SND_USR_ID_FK">
+          <End Role="JC_HC_USERS" Type="Self.JC_HC_USERS" Multiplicity="0..1" />
+          <End Role="JC_HC_USR_SND" Type="Self.JC_HC_USR_SND" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JC_HC_USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="JC_HC_USR_SND">
+              <PropertyRef Name="USR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LogicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JC_HC_AGENCY" EntityType="Self.JC_HC_AGENCY" />
+          <EntitySet Name="JC_HC_CURENT" EntityType="Self.JC_HC_CURENT" />
+          <EntitySet Name="JC_HC_LOI" EntityType="Self.JC_HC_LOI" />
+          <EntitySet Name="JC_HC_SENT" EntityType="Self.JC_HC_SENT" />
+          <EntitySet Name="JC_HC_TYPES" EntityType="Self.JC_HC_TYPES" />
+          <EntitySet Name="JC_HC_USERS" EntityType="Self.JC_HC_USERS" />
+          <EntitySet Name="JC_HC_USR_SND" EntityType="Self.JC_HC_USR_SND" />
+          <AssociationSet Name="SND_AGY_ID_FK" Association="Self.SND_AGY_ID_FK">
+            <End Role="JC_HC_AGENCY" EntitySet="JC_HC_AGENCY" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+          <AssociationSet Name="SND_LOI_ID_FK" Association="Self.SND_LOI_ID_FK">
+            <End Role="JC_HC_LOI" EntitySet="JC_HC_LOI" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+          <AssociationSet Name="SND_USR_ID_FK" Association="Self.SND_USR_ID_FK">
+            <End Role="JC_HC_USERS" EntitySet="JC_HC_USERS" />
+            <End Role="JC_HC_USR_SND" EntitySet="JC_HC_USR_SND" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LogicModelStoreContainer" CdmEntityContainer="LogicEntities">
+          <EntitySetMapping Name="JC_HC_AGENCY">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_AGENCY">
+              <MappingFragment StoreEntitySet="JC_HC_AGENCY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+                <ScalarProperty Name="UNITS" ColumnName="UNITS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_CURENT">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_CURENT">
+              <MappingFragment StoreEntitySet="JC_HC_CURENT">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+                <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+                <ScalarProperty Name="UDTS" ColumnName="UDTS" />
+                <ScalarProperty Name="XDTS" ColumnName="XDTS" />
+                <ScalarProperty Name="ESTNUM" ColumnName="ESTNUM" />
+                <ScalarProperty Name="EDIRPRE" ColumnName="EDIRPRE" />
+                <ScalarProperty Name="EFEANME" ColumnName="EFEANME" />
+                <ScalarProperty Name="EFEATYP" ColumnName="EFEATYP" />
+                <ScalarProperty Name="UNIT_COUNT" ColumnName="UNIT_COUNT" />
+                <ScalarProperty Name="LOI_SENT" ColumnName="LOI_SENT" />
+                <ScalarProperty Name="HC_SENT" ColumnName="HC_SENT" />
+                <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+                <ScalarProperty Name="LOI_EVAL" ColumnName="LOI_EVAL" />
+                <ScalarProperty Name="UNIT_EVAL" ColumnName="UNIT_EVAL" />
+                <ScalarProperty Name="TYPE_EVAL" ColumnName="TYPE_EVAL" />
+                <ScalarProperty Name="NUM_1" ColumnName="NUM_1" />
+                <ScalarProperty Name="XSTREET1" ColumnName="XSTREET1" />
+                <ScalarProperty Name="XSTREET2" ColumnName="XSTREET2" />
+                <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+                <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+                <ScalarProperty Name="AD_TS" ColumnName="AD_TS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_LOI">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_LOI">
+              <MappingFragment StoreEntitySet="JC_HC_LOI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HNDR_BLCK" ColumnName="HNDR_BLCK" />
+                <ScalarProperty Name="LOI_GRP_ID" ColumnName="LOI_GRP_ID" />
+                <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="EFEANME" ColumnName="EFEANME" />
+                <ScalarProperty Name="ESTNUM" ColumnName="ESTNUM" />
+                <ScalarProperty Name="EDIRPRE" ColumnName="EDIRPRE" />
+                <ScalarProperty Name="EFEATYP" ColumnName="EFEATYP" />
+                <ScalarProperty Name="COMMON_NAME" ColumnName="COMMON_NAME" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_SENT">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_SENT">
+              <MappingFragment StoreEntitySet="JC_HC_SENT">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+                <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+                <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+                <ScalarProperty Name="SENT_DT" ColumnName="SENT_DT" />
+                <ScalarProperty Name="EMAIL_SENT" ColumnName="EMAIL_SENT" />
+                <ScalarProperty Name="NUM_1" ColumnName="NUM_1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_TYPES">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_TYPES">
+              <MappingFragment StoreEntitySet="JC_HC_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TYCOD" ColumnName="TYCOD" />
+                <ScalarProperty Name="SUB_TYCOD" ColumnName="SUB_TYCOD" />
+                <ScalarProperty Name="AGENCY" ColumnName="AGENCY" />
+                <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+                <ScalarProperty Name="UN_CNT" ColumnName="UN_CNT" />
+                <ScalarProperty Name="ALWYS_SND" ColumnName="ALWYS_SND" />
+                <ScalarProperty Name="NEVR_SND" ColumnName="NEVR_SND" />
+                <ScalarProperty Name="NOT4PUB" ColumnName="NOT4PUB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_USERS">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_USERS">
+              <MappingFragment StoreEntitySet="JC_HC_USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+                <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="OOF" ColumnName="OOF" />
+                <ScalarProperty Name="LOI_GRPS" ColumnName="LOI_GRPS" />
+                <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="LEO" ColumnName="LEO" />
+                <ScalarProperty Name="ZIP2" ColumnName="ZIP2" />
+                <ScalarProperty Name="ZIP3" ColumnName="ZIP3" />
+                <ScalarProperty Name="RECD1" ColumnName="RECD1" />
+                <ScalarProperty Name="RECD2" ColumnName="RECD2" />
+                <ScalarProperty Name="RECD3" ColumnName="RECD3" />
+                <ScalarProperty Name="RECD4" ColumnName="RECD4" />
+                <ScalarProperty Name="RECD5" ColumnName="RECD5" />
+                <ScalarProperty Name="RECD6" ColumnName="RECD6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JC_HC_USR_SND">
+            <EntityTypeMapping TypeName="LogicModel.JC_HC_USR_SND">
+              <MappingFragment StoreEntitySet="JC_HC_USR_SND">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USR_ID" ColumnName="USR_ID" />
+                <ScalarProperty Name="ESZ" ColumnName="ESZ" />
+                <ScalarProperty Name="AGY_ID" ColumnName="AGY_ID" />
+                <ScalarProperty Name="GRP_ID" ColumnName="GRP_ID" />
+                <ScalarProperty Name="LOI_ID" ColumnName="LOI_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

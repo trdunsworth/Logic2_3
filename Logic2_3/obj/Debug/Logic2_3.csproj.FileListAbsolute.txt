@@ -1,0 +1,1 @@
+u:\visual studio 2013\Projects\Logic2_3\Logic2_3\bin\Debug\Logic2_3.exe.config
